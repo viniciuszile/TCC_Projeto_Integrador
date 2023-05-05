@@ -275,7 +275,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         Quiz jogo = new Quiz();
 
-        // Chame o método iniciarJogo do objeto
+        // Chame o método iniciar Jogo do objeto
         Quiz.main(new String[]{});
         this.dispose();
     }//GEN-LAST:event_btn_quizActionPerformed

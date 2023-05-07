@@ -20,24 +20,21 @@ public class Jokenpo extends javax.swing.JFrame {
      * Creates new form Jokenpo
      */
     static int escolha = 0;
+    static int cont_j = 0;
+    static int cont_m = 0;
     double player = 0;
     double maquina = Math.floor(Math.random() * 4);
 
     public Jokenpo() {
         initComponents();
+        btn_recomecar.setVisible(false);
+        Jogar.setVisible(false);
+        jLabel5.setText("Vitorias Jogador: " + cont_j);
+        jLabel6.setText("Vitorias Maquina: " + cont_m);
+
     }
 
     public Jokenpo(String text) {
-        super(text);
-        setOpaque(false);
-        setBorderPainted(false);
-        setForeground(Color.WHITE);
-        setOpaque(false);
-        setContentAreaFilled(false);
-        setFocusPainted(false);
-//        setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        setFont(new Font("Tahoma", Font.PLAIN, 18));
-        setOpacity(0.5f);
     }
 
     /**
@@ -55,15 +52,20 @@ public class Jokenpo extends javax.swing.JFrame {
         jTextPane1 = new javax.swing.JTextPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         Jogar = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
-        btn_tesoura = new javax.swing.JToggleButton();
-        btn_pedra = new javax.swing.JToggleButton();
-        btn_papel = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        btn_pedra = new javax.swing.JToggleButton();
+        btn_tesoura2 = new javax.swing.JToggleButton();
+        btn_papel2 = new javax.swing.JToggleButton();
+        btn_pedra2 = new javax.swing.JToggleButton();
+        btn_papel = new javax.swing.JToggleButton();
+        btn_tesoura = new javax.swing.JToggleButton();
+        jLabel2 = new javax.swing.JLabel();
+        btn_recomecar = new javax.swing.JToggleButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
@@ -72,10 +74,11 @@ public class Jokenpo extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextPane1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(580, 500));
 
         jPanel1.setBackground(new java.awt.Color(204, 153, 255));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
@@ -90,22 +93,12 @@ public class Jokenpo extends javax.swing.JFrame {
         }.getIcon());
         jLabel1.setText("Faça Sua Escolha");
 
-        jLabel5.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("1 - PEDRA 2 - PAPEL 3 - TESOURA");
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Maquina");
-
         Jogar.setText("Jogar");
         Jogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JogarActionPerformed(evt);
             }
         });
-
-        jLabel6.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabel6.setText("Ganhador");
 
         jToggleButton1.setText(" ↲");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -114,109 +107,166 @@ public class Jokenpo extends javax.swing.JFrame {
             }
         });
 
-        btn_tesoura.setBackground(new java.awt.Color(204, 153, 255));
-        btn_tesoura.setIcon(new javax.swing.ImageIcon("C:\\Users\\vinicius.zcosta\\Desktop\\tesoura.png")); // NOI18N
-        btn_tesoura.setBorderPainted(false);
-        btn_tesoura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_tesouraActionPerformed(evt);
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("file:/C:/Users/janaina.csilva64/Downloads/gamer.png")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
             }
-        });
+        }.getIcon());
+        jLabel7.setText("Escolha adversario");
+
+        jLabel4.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("OPÇÕES");
 
         btn_pedra.setBackground(new java.awt.Color(204, 153, 255));
-        btn_pedra.setIcon(new javax.swing.ImageIcon("C:\\Users\\vinicius.zcosta\\Desktop\\pedra.png")); // NOI18N
-        btn_pedra.setBorderPainted(false);
+        btn_pedra.setText("👊");
         btn_pedra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_pedraActionPerformed(evt);
             }
         });
 
+        btn_tesoura2.setBackground(new java.awt.Color(204, 153, 255));
+        btn_tesoura2.setText("✌");
+
+        btn_papel2.setBackground(new java.awt.Color(204, 153, 255));
+        btn_papel2.setText("🖐");
+
+        btn_pedra2.setBackground(new java.awt.Color(204, 153, 255));
+        btn_pedra2.setText("👊");
+
         btn_papel.setBackground(new java.awt.Color(204, 153, 255));
-        btn_papel.setIcon(new javax.swing.ImageIcon("C:\\Users\\vinicius.zcosta\\Desktop\\papel.png")); // NOI18N
-        btn_papel.setBorderPainted(false);
+        btn_papel.setText("🖐");
         btn_papel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_papelActionPerformed(evt);
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("OPÇÕES");
+        btn_tesoura.setBackground(new java.awt.Color(204, 153, 255));
+        btn_tesoura.setText("✌");
+        btn_tesoura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_tesouraActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Ganhador ?");
+
+        btn_recomecar.setText("Recomeçar");
+        btn_recomecar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_recomecarActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setText("Vitorias Jogador 0");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel6.setText("Vitorias maquina 0");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(627, 627, 627)
-                        .addComponent(jLabel2)
-                        .addGap(28, 28, 28))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel6)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btn_pedra, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btn_papel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btn_tesoura, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(46, 46, 46)
-                                .addComponent(Jogar)))
-                        .addGap(618, 618, 618))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jToggleButton1)
+                .addGap(15, 15, 15))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jToggleButton1))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(12, 12, 12)
+                                    .addComponent(btn_pedra, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(btn_papel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(btn_tesoura, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(116, 116, 116)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(btn_pedra2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(btn_papel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(btn_tesoura2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(15, 15, 15))
+                                .addComponent(jLabel7)))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(221, 221, 221)
+                        .addComponent(btn_recomecar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(235, 235, 235)
+                        .addComponent(Jogar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel6)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jToggleButton1)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(jLabel5)
-                .addGap(90, 90, 90)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jToggleButton1)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn_papel)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btn_pedra, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(btn_tesoura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(Jogar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(75, 75, 75))
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_pedra, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_tesoura2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_papel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_pedra2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_papel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_tesoura, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addComponent(Jogar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(btn_recomecar)
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 545, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -224,44 +274,74 @@ public class Jokenpo extends javax.swing.JFrame {
 
     private void JogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JogarActionPerformed
 
+        if (maquina == 1) {
+            btn_papel2.setVisible(false);
+            btn_tesoura2.setVisible(false);
+        } else if (maquina == 2) {
+            btn_pedra2.setVisible(false);
+            btn_tesoura2.setVisible(false);
+        } else if (maquina == 3) {
+            btn_papel2.setVisible(false);
+            btn_pedra2.setVisible(false);
+        }
+
+        if (escolha == 1) {
+            btn_papel.setVisible(false);
+            btn_tesoura.setVisible(false);
+        } else if (escolha == 2) {
+            btn_pedra.setVisible(false);
+            btn_tesoura.setVisible(false);
+        } else if (escolha == 3) {
+            btn_papel.setVisible(false);
+            btn_pedra.setVisible(false);
+        }
+
         if (escolha == 1 && maquina == 3) {
-            jLabel6.setText("pedra quebra tesoura. o jogador venceu");
+            jLabel2.setText("pedra quebra tesoura. o jogador venceu");
+            btn_recomecar.setVisible(true);
+            cont_j++;
+            jLabel5.setText("Vitorias Jogador: " + cont_j);
         } else if (escolha == 2 && maquina == 1) {
-            jLabel6.setText("papel embrulha pedra. o jogador venceu");
+            jLabel2.setText("papel embrulha pedra. o jogador venceu");
+            btn_recomecar.setVisible(true);
+            cont_j++;
+            jLabel5.setText("Vitorias Jogador: " + cont_j);
         } else if (escolha == 3 && maquina == 2) {
-            jLabel6.setText("tesoura corta papel. o jogador venceu");
+            jLabel2.setText("tesoura corta papel. o jogador venceu");
+            btn_recomecar.setVisible(true);
+            cont_j++;
+            jLabel5.setText("Vitorias Jogador: " + cont_j);
         }
 
         if (maquina == 1 && escolha == 3) {
-            jLabel6.setText("pedra quebra tesoura. a maquina venceu");
+            jLabel2.setText("pedra quebra tesoura. a maquina venceu");
+            cont_m++;
+            jLabel6.setText("Vitorias Maquina: " + cont_m);
+            btn_recomecar.setVisible(true);
         } else if (maquina == 2 && escolha == 1) {
-            jLabel6.setText("papel embrulha pedra. a maquina venceu");
+            jLabel2.setText("papel embrulha pedra. a maquina venceu");
+            btn_recomecar.setVisible(true);
+            cont_m++;
+            jLabel6.setText("Vitorias Maquina: " + cont_m);
         } else if (maquina == 3 && escolha == 2) {
-            jLabel6.setText("tesoura corta papel. a maquina venceu");
-        }
-
-        if (maquina == escolha) {
-            jLabel6.setText("EMPATE!!!");
+            jLabel2.setText("tesoura corta papel. a maquina venceu");
+            btn_recomecar.setVisible(true);
+            cont_m++;
+            jLabel6.setText("Vitorias Maquina: " + cont_m);
+        } else if (maquina == escolha) {
+            escolha = 0;
+            btn_recomecar.setVisible(false);
+            btn_papel.setVisible(true);
+            btn_pedra.setVisible(true);
+            btn_tesoura.setVisible(true);
+            btn_papel2.setVisible(true);
+            btn_pedra2.setVisible(true);
+            btn_tesoura2.setVisible(true);
             maquina = Math.floor(Math.random() * 4);
+            jLabel2.setText("EMPATE!!!");
+            Jogar.setVisible(false);
         }
 
-        switch (escolha) {
-            case 1:
-                btn_papel.setVisible(false);
-                btn_tesoura.setVisible(false);
-                break;
-
-            case 2:
-                btn_pedra.setVisible(false);
-                btn_tesoura.setVisible(false);
-                break;
-            case 3:
-                btn_papel.setVisible(false);
-                btn_pedra.setVisible(false);
-                break;
-            default:
-                break;
-        }
 
     }//GEN-LAST:event_JogarActionPerformed
 
@@ -277,20 +357,35 @@ public class Jokenpo extends javax.swing.JFrame {
     private void btn_pedraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pedraActionPerformed
         // TODO add your handling code here:
         escolha = 1;
-
+        Jogar.setVisible(true);
     }//GEN-LAST:event_btn_pedraActionPerformed
 
     private void btn_papelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_papelActionPerformed
         // TODO add your handling code here:
         escolha = 2;
-
+        Jogar.setVisible(true);
     }//GEN-LAST:event_btn_papelActionPerformed
 
     private void btn_tesouraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tesouraActionPerformed
         // TODO add your handling code here:
         escolha = 3;
-
+        Jogar.setVisible(true);
     }//GEN-LAST:event_btn_tesouraActionPerformed
+
+    private void btn_recomecarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_recomecarActionPerformed
+        // TODO add your handling code here:
+        escolha = 0;
+        btn_recomecar.setVisible(false);
+        btn_papel.setVisible(true);
+        btn_pedra.setVisible(true);
+        btn_tesoura.setVisible(true);
+        btn_papel2.setVisible(true);
+        btn_pedra2.setVisible(true);
+        btn_tesoura2.setVisible(true);
+        maquina = Math.floor(Math.random() * 4);
+        jLabel2.setText("Ganhador ?");
+        Jogar.setVisible(false);
+    }//GEN-LAST:event_btn_recomecarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -329,9 +424,13 @@ public class Jokenpo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Jogar;
-    private javax.swing.JButton btn_papel;
+    private javax.swing.JToggleButton btn_papel;
+    private javax.swing.JToggleButton btn_papel2;
     private javax.swing.JToggleButton btn_pedra;
+    private javax.swing.JToggleButton btn_pedra2;
+    private javax.swing.JToggleButton btn_recomecar;
     private javax.swing.JToggleButton btn_tesoura;
+    private javax.swing.JToggleButton btn_tesoura2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -339,29 +438,11 @@ public class Jokenpo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 
-    private void setOpaque(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void setBorderPainted(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void setContentAreaFilled(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void setFocusPainted(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void setBorder(Border createEmptyBorder) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

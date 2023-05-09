@@ -91,7 +91,6 @@ public class Acerte_Numero extends javax.swing.JFrame {
         label_contador.setText("Numero De tentavia :");
 
         jogar_novamente.setBackground(new java.awt.Color(204, 204, 255));
-        jogar_novamente.setForeground(new java.awt.Color(0, 0, 0));
         jogar_novamente.setText("Jogar novamente");
         jogar_novamente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,8 +103,6 @@ public class Acerte_Numero extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Copyright © Zile");
 
-        voltar_menu.setBackground(new java.awt.Color(255, 255, 255));
-        voltar_menu.setForeground(new java.awt.Color(0, 0, 0));
         voltar_menu.setText(" ↲");
         voltar_menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -6,7 +6,7 @@ package Menus;
 
 import Jogos.Acerte_Numero;
 import Jogos.Forca;
-import Jogos.Impar_Par;
+import Jogos.Impar_Par.Impar_Par_Sorteio;
 import Jogos.Jokenpo;
 import Jogos.Quiz;
 import Jogos.Jogo_Da_Velha;
@@ -275,7 +275,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         Quiz jogo = new Quiz();
 
-        // Chame o método iniciarJogo do objeto
+        // Chame o método iniciar Jogo do objeto
         Quiz.main(new String[]{});
         this.dispose();
     }//GEN-LAST:event_btn_quizActionPerformed
@@ -299,11 +299,13 @@ public class Menu_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_jokenpoActionPerformed
 
     private void btn_impaparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_impaparActionPerformed
-        // TODO add your handling code here:
-        Quiz jogo = new Quiz();
 
-        // Chame o método iniciarJogo do objeto
-        Quiz.main(new String[]{});
+// TODO add your handling code here:
+        Impar_Par_Sorteio jogo = new Impar_Par_Sorteio();
+
+        // Start the Quiz game and dispose the current window
+        Impar_Par_Sorteio.main(new String[]{});
+
         this.dispose();
     }//GEN-LAST:event_btn_impaparActionPerformed
 
@@ -385,9 +387,9 @@ public class Menu_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_impaparMouseExited
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        
+
         Criadores Extras = new Criadores();
-        
+
         Criadores.main(new String[]{});
         this.dispose();
     }//GEN-LAST:event_jToggleButton1ActionPerformed

@@ -6,11 +6,10 @@ package Menus;
 
 import Jogos.Acerte_Numero;
 import Jogos.Forca;
-import Jogos.Impar_Par;
+import Jogos.Impar_Par.Impar_Par_Sorteio;
 import Jogos.Jokenpo;
 import Jogos.Quiz;
 import Jogos.Jogo_Da_Velha;
-import Extras.Criadores;
 import java.awt.Color;
 import java.awt.Dimension;
 
@@ -25,11 +24,7 @@ public class Menu_Principal extends javax.swing.JFrame {
      */
     public Menu_Principal() {
         initComponents();
-        Dimension maxDimension = new Dimension(500, 600);
-        this.setMaximumSize(maxDimension);
-
-// Impede que o usuário redimensione a janela
-        this.setResizable(false);
+        setResizable(false);
     }
 
     /**
@@ -53,7 +48,6 @@ public class Menu_Principal extends javax.swing.JFrame {
         btn_jokenpo = new javax.swing.JToggleButton();
         btn_impapar = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
 
         jPasswordField1.setText("jPasswordField1");
 
@@ -185,15 +179,6 @@ public class Menu_Principal extends javax.swing.JFrame {
         jLabel1.setToolTipText("");
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jToggleButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jToggleButton1.setText("?");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -212,10 +197,6 @@ public class Menu_Principal extends javax.swing.JFrame {
                     .addComponent(btn_jokenpo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58))
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,9 +217,7 @@ public class Menu_Principal extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_impapar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_jokenpo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addComponent(jToggleButton1)
-                .addGap(15, 15, 15))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -275,7 +254,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         Quiz jogo = new Quiz();
 
-        // Chame o método iniciarJogo do objeto
+        // Chame o método iniciar Jogo do objeto
         Quiz.main(new String[]{});
         this.dispose();
     }//GEN-LAST:event_btn_quizActionPerformed
@@ -299,11 +278,13 @@ public class Menu_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_jokenpoActionPerformed
 
     private void btn_impaparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_impaparActionPerformed
-        // TODO add your handling code here:
-        Quiz jogo = new Quiz();
 
-        // Chame o método iniciarJogo do objeto
-        Quiz.main(new String[]{});
+// TODO add your handling code here:
+        Impar_Par_Sorteio jogo = new Impar_Par_Sorteio();
+
+        // Start the Quiz game and dispose the current window
+        Impar_Par_Sorteio.main(new String[]{});
+
         this.dispose();
     }//GEN-LAST:event_btn_impaparActionPerformed
 
@@ -384,14 +365,6 @@ public class Menu_Principal extends javax.swing.JFrame {
         btn_impapar.setForeground(new Color(0, 0, 0, 255));
     }//GEN-LAST:event_btn_impaparMouseExited
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        
-        Criadores Extras = new Criadores();
-        
-        Criadores.main(new String[]{});
-        this.dispose();
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -443,6 +416,5 @@ public class Menu_Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }

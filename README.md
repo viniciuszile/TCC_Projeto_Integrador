@@ -50,10 +50,6 @@ Para utilizar este projeto, siga os passos abaixo:
 5. No menu principal, selecione o jogo que deseja jogar entre as opções disponíveis: Acerte o Número, Jogo da Velha, Jokenpô, Ímpar ou Par, Forca e Quiz.
 6. Divirta-se jogando o jogo escolhido.
 
-Certifique-se de seguir corretamente as instruções e aproveite o poder do CRUD com Java Swing para o gerenciamento eficiente de dados.
-
-Peço desculpas pela confusão anterior. Aqui está a versão corrigida:
-
 ## Contribuidores 👥
 
 Agradecemos aos seguintes contribuidores por sua participação neste projeto:

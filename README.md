@@ -12,7 +12,6 @@
 ## Tecnologias Utilizadas
 
 ![Licença](https://img.shields.io/badge/Licença-MIT-blue)
-![MySQL Workbench](https://img.shields.io/badge/MySQL-Workbench-blue?logo=mysql&logoColor=white)
 ![Java Swing](https://img.shields.io/badge/Java-Swing-orange?logo=java&logoColor=white)
 ![NetBeans](https://img.shields.io/badge/NetBeans-IDE-orange?logo=apache-netbeans-ide&logoColor=white)
 
@@ -40,7 +39,8 @@ Siga as instruções abaixo para configurar seu ambiente:
 
 Certifique-se de ter todas as dependências instaladas corretamente antes de prosseguir.
 
-## Utilização 💻
+Utilização 💻
+
 Para utilizar este projeto, siga os passos abaixo:
 
 1. Certifique-se de ter instalado corretamente todas as ferramentas necessárias mencionadas na seção de [Instalação](#instalação).
@@ -50,20 +50,21 @@ Para utilizar este projeto, siga os passos abaixo:
 5. No menu principal, selecione o jogo que deseja jogar entre as opções disponíveis: Acerte o Número, Jogo da Velha, Jokenpô, Ímpar ou Par, Forca e Quiz.
 6. Divirta-se jogando o jogo escolhido.
 
-Agradecemos por utilizar nosso projeto e esperamos que você se divirta com os jogos em Java!
-
-![Demonstração da utilização](https://github.com/viniciuszile/Crud_Java_Swing/raw/main/2023-05-15%2014-51-38.gif)
-
 Certifique-se de seguir corretamente as instruções e aproveite o poder do CRUD com Java Swing para o gerenciamento eficiente de dados.
 
+Peço desculpas pela confusão anterior. Aqui está a versão corrigida:
 
-## Redes Sociais 📱
+## Contribuidores 👥
 
-Você pode me encontrar nas seguintes redes sociais:
+Agradecemos aos seguintes contribuidores por sua participação neste projeto:
 
-- [LinkedIn](https://www.linkedin.com/in/vinicius-zile-91814a21a/) ![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=linkedin)
+- Vinicius Zile ([GitHub](https://github.com/viniciuszile))
+- Nome do Contribuidor 2 ([GitHub](https://github.com/nome_contribuidor_2))
+- Nome do Contribuidor 3 ([GitHub](https://github.com/nome_contribuidor_3))
+- Nome do Contribuidor 4 ([GitHub](https://github.com/nome_contribuidor_4))
+- Nome do Contribuidor 5 ([GitHub](https://github.com/nome_contribuidor_5))
 
-- [Instagram](https://www.instagram.com/viniciuszile/) ![Instagram](https://img.shields.io/badge/-Instagram-purple?style=flat-square&logo=instagram)
+Agradecemos a todos os contribuidores por seu trabalho neste projeto.
 
 ## Licença 🔒
 

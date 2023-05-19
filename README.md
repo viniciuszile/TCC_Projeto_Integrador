@@ -59,10 +59,10 @@ Peço desculpas pela confusão anterior. Aqui está a versão corrigida:
 Agradecemos aos seguintes contribuidores por sua participação neste projeto:
 
 - Vinicius Zile ([GitHub](https://github.com/viniciuszile))
-- Nome do Contribuidor 2 ([GitHub](https://github.com/nome_contribuidor_2))
-- Nome do Contribuidor 3 ([GitHub](https://github.com/nome_contribuidor_3))
-- Nome do Contribuidor 4 ([GitHub](https://github.com/nome_contribuidor_4))
-- Nome do Contribuidor 5 ([GitHub](https://github.com/nome_contribuidor_5))
+- Janaina Costa ([GitHub](https://github.com/janainaacosta))
+- Lucca Leonardo ([GitHub](https://github.com/LuccaLeonard))
+- Rodrigo Silva  ([GitHub](https://github.com/RodrigoAnjos2004))
+- Wesley Santos ([GitHub](https://github.com/wesleww))
 
 Agradecemos a todos os contribuidores por seu trabalho neste projeto.
 

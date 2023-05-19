@@ -6,13 +6,11 @@ package Menus;
 
 import Jogos.Acerte_Numero;
 import Jogos.Forca;
-import Jogos.Impar_Par;
+import Jogos.Impar_Par.Impar_Par_Sorteio;
 import Jogos.Jokenpo;
 import Jogos.Quiz;
 import Jogos.Jogo_Da_Velha;
-import Extras.Criadores;
 import java.awt.Color;
-import java.awt.Dimension;
 
 /**
  *
@@ -25,11 +23,8 @@ public class Menu_Principal extends javax.swing.JFrame {
      */
     public Menu_Principal() {
         initComponents();
-        Dimension maxDimension = new Dimension(500, 600);
-        this.setMaximumSize(maxDimension);
-
-// Impede que o usuário redimensione a janela
-        this.setResizable(false);
+        setResizable(false);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -53,7 +48,6 @@ public class Menu_Principal extends javax.swing.JFrame {
         btn_jokenpo = new javax.swing.JToggleButton();
         btn_impapar = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
 
         jPasswordField1.setText("jPasswordField1");
 
@@ -64,7 +58,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(500, 550));
         setType(java.awt.Window.Type.POPUP);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 600));
 
         jLabel2.setFont(new java.awt.Font("Book Antiqua", 1, 24)); // NOI18N
@@ -73,8 +67,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         jLabel2.setToolTipText("");
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        btn_acertenum.setBackground(new java.awt.Color(255, 255, 255));
-        btn_acertenum.setForeground(new java.awt.Color(0, 0, 0));
+        btn_acertenum.setFont(new java.awt.Font("Lucida Console", 1, 12)); // NOI18N
         btn_acertenum.setText("Acerte o Numero");
         btn_acertenum.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -93,8 +86,7 @@ public class Menu_Principal extends javax.swing.JFrame {
             }
         });
 
-        btn_forca.setBackground(new java.awt.Color(255, 255, 255));
-        btn_forca.setForeground(new java.awt.Color(0, 0, 0));
+        btn_forca.setFont(new java.awt.Font("Lucida Console", 3, 12)); // NOI18N
         btn_forca.setText("Forca");
         btn_forca.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -110,8 +102,7 @@ public class Menu_Principal extends javax.swing.JFrame {
             }
         });
 
-        btn_quiz.setBackground(new java.awt.Color(255, 255, 255));
-        btn_quiz.setForeground(new java.awt.Color(0, 0, 0));
+        btn_quiz.setFont(new java.awt.Font("Lucida Console", 3, 12)); // NOI18N
         btn_quiz.setText("Quiz");
         btn_quiz.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -127,8 +118,7 @@ public class Menu_Principal extends javax.swing.JFrame {
             }
         });
 
-        btn_velha.setBackground(new java.awt.Color(255, 255, 255));
-        btn_velha.setForeground(new java.awt.Color(0, 0, 0));
+        btn_velha.setFont(new java.awt.Font("Lucida Console", 3, 12)); // NOI18N
         btn_velha.setText("Jogo Da Velha");
         btn_velha.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -144,8 +134,7 @@ public class Menu_Principal extends javax.swing.JFrame {
             }
         });
 
-        btn_jokenpo.setBackground(new java.awt.Color(255, 255, 255));
-        btn_jokenpo.setForeground(new java.awt.Color(0, 0, 0));
+        btn_jokenpo.setFont(new java.awt.Font("Lucida Console", 3, 12)); // NOI18N
         btn_jokenpo.setText("Jokenpo");
         btn_jokenpo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -161,8 +150,7 @@ public class Menu_Principal extends javax.swing.JFrame {
             }
         });
 
-        btn_impapar.setBackground(new java.awt.Color(255, 255, 255));
-        btn_impapar.setForeground(new java.awt.Color(0, 0, 0));
+        btn_impapar.setFont(new java.awt.Font("Lucida Console", 3, 12)); // NOI18N
         btn_impapar.setText("Impa Ou Par");
         btn_impapar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -178,21 +166,12 @@ public class Menu_Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Selecione Um Jogo");
         jLabel1.setToolTipText("");
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        jToggleButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jToggleButton1.setText("?");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -212,33 +191,27 @@ public class Menu_Principal extends javax.swing.JFrame {
                     .addComponent(btn_jokenpo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58))
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(jLabel2)
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addGap(66, 66, 66)
+                .addGap(60, 60, 60)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_acertenum, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_quiz, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_velha, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_forca, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_impapar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_jokenpo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addComponent(jToggleButton1)
-                .addGap(15, 15, 15))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -249,7 +222,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -275,17 +248,13 @@ public class Menu_Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         Quiz jogo = new Quiz();
 
-        // Chame o método iniciarJogo do objeto
+        // Chame o método iniciar Jogo do objeto
         Quiz.main(new String[]{});
         this.dispose();
     }//GEN-LAST:event_btn_quizActionPerformed
 
     private void btn_velhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_velhaActionPerformed
-        // TODO add your handling code here:
         Jogo_Da_Velha jogo = new Jogo_Da_Velha();
-
-        // Chame o método iniciarJogo do objeto
-        Jogo_Da_Velha.main(new String[]{});
         this.dispose();
     }//GEN-LAST:event_btn_velhaActionPerformed
 
@@ -299,11 +268,13 @@ public class Menu_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_jokenpoActionPerformed
 
     private void btn_impaparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_impaparActionPerformed
-        // TODO add your handling code here:
-        Quiz jogo = new Quiz();
 
-        // Chame o método iniciarJogo do objeto
-        Quiz.main(new String[]{});
+// TODO add your handling code here:
+        Impar_Par_Sorteio jogo = new Impar_Par_Sorteio();
+
+        // Start the Quiz game and dispose the current window
+        Impar_Par_Sorteio.main(new String[]{});
+
         this.dispose();
     }//GEN-LAST:event_btn_impaparActionPerformed
 
@@ -314,7 +285,7 @@ public class Menu_Principal extends javax.swing.JFrame {
 
     private void btn_acertenumMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_acertenumMouseEntered
         // TODO add your handling code here:
-        btn_acertenum.setBackground(new Color(102, 102, 102, 110));
+        btn_acertenum.setBackground(new Color(139, 0, 0));
         btn_acertenum.setForeground(new Color(255, 255, 255, 255));
     }//GEN-LAST:event_btn_acertenumMouseEntered
 
@@ -326,7 +297,7 @@ public class Menu_Principal extends javax.swing.JFrame {
 
     private void btn_quizMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_quizMouseEntered
         // TODO add your handling code here:
-        btn_quiz.setBackground(new Color(102, 102, 102, 255));
+        btn_quiz.setBackground(new Color(139, 0, 0));
         btn_quiz.setForeground(new Color(255, 255, 255, 255));
     }//GEN-LAST:event_btn_quizMouseEntered
 
@@ -338,25 +309,25 @@ public class Menu_Principal extends javax.swing.JFrame {
 
     private void btn_velhaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_velhaMouseEntered
         // TODO add your handling code here:
-        btn_velha.setBackground(new Color(102, 102, 102, 255));
+        btn_velha.setBackground(new Color(139, 0, 0));
         btn_velha.setForeground(new Color(255, 255, 255, 255));
     }//GEN-LAST:event_btn_velhaMouseEntered
 
     private void btn_forcaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_forcaMouseEntered
         // TODO add your handling code here:
-        btn_forca.setBackground(new Color(102, 102, 102, 255));
+        btn_forca.setBackground(new Color(139, 0, 0));
         btn_forca.setForeground(new Color(255, 255, 255, 255));
     }//GEN-LAST:event_btn_forcaMouseEntered
 
     private void btn_jokenpoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_jokenpoMouseEntered
         // TODO add your handling code here:
-        btn_jokenpo.setBackground(new Color(102, 102, 102, 255));
+        btn_jokenpo.setBackground(new Color(139, 0, 0));
         btn_jokenpo.setForeground(new Color(255, 255, 255, 255));
     }//GEN-LAST:event_btn_jokenpoMouseEntered
 
     private void btn_impaparMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_impaparMouseEntered
         // TODO add your handling code here:
-        btn_impapar.setBackground(new Color(102, 102, 102, 255));
+        btn_impapar.setBackground(new Color(139, 0, 0));
         btn_impapar.setForeground(new Color(255, 255, 255, 255));
     }//GEN-LAST:event_btn_impaparMouseEntered
 
@@ -383,14 +354,6 @@ public class Menu_Principal extends javax.swing.JFrame {
         btn_impapar.setBackground(Color.WHITE);
         btn_impapar.setForeground(new Color(0, 0, 0, 255));
     }//GEN-LAST:event_btn_impaparMouseExited
-
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        
-        Criadores Extras = new Criadores();
-        
-        Criadores.main(new String[]{});
-        this.dispose();
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -443,6 +406,5 @@ public class Menu_Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }

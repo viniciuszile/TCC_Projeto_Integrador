@@ -39,14 +39,14 @@ public class Jogo_Da_Velha extends JFrame {
 
         // criar painel de fundo
         painelFundo = new JPanel();
-        painelFundo.setBackground(new Color(17, 138, 126));
+        painelFundo.setBackground(new Color(255,15,8));
         painelFundo.setLayout(null);
 
         add(painelFundo);
 
         JButton btn = new JButton(" ↲");
-        btn.setBackground(Color.BLACK);
-        btn.setForeground(Color.WHITE);
+        btn.setForeground(new Color(187,187,187));
+        btn.setBackground(new Color(255,255,255));
         btn.setBounds(getWidth() - 65, 10, 45, 25); // define as coordenadas e tamanho do botão
         painelFundo.add(btn); // adiciona o botão ao painel de fundo
 
@@ -63,10 +63,10 @@ public class Jogo_Da_Velha extends JFrame {
 
         JLabel labelTopo = new JLabel("Jogo da Velha", SwingConstants.CENTER);
         labelTopo.setBounds(0, 0, getWidth(), 50);
-        labelTopo.setFont(new Font("Arial", Font.BOLD, 25));
-        labelTopo.setForeground(Color.BLACK);
+        labelTopo.setFont(new Font("Gill Sans Ultra Bold", Font.BOLD, 25));
+        labelTopo.setForeground(new Color(150,15,8));
         labelTopo.setOpaque(true);
-        labelTopo.setBackground(new Color(17, 138, 126));
+        labelTopo.setBackground(new Color(255,15,8));
 
         painelFundo.add(labelTopo);
 
@@ -76,8 +76,9 @@ public class Jogo_Da_Velha extends JFrame {
             bt[cont] = new JButton();
             painelFundo.add(bt[cont]);
             bt[cont].setBounds((100 * (i % 3)) + 50, (100 * (i / 3)) + 50, 95, 95);
-            bt[cont].setBackground(Color.BLACK);
-            bt[cont].setForeground(Color.WHITE);
+            bt[cont].setBackground(new Color(150,15,8));
+            
+           // bt[cont].setForeground(Color.WHITE);
             Font font = bt[cont].getFont();
             bt[cont].setFont(font.deriveFont(font.getSize() + 20f));
             bt[cont].addMouseListener(new java.awt.event.MouseAdapter() {
@@ -100,7 +101,7 @@ public class Jogo_Da_Velha extends JFrame {
             JLabel labelFinal = new JLabel("Copyright © Janaina Costa");
             labelFinal.setBounds(70, 350, 250, 50);
             labelFinal.setFont(new Font("Arial", Font.BOLD, 18));
-            labelFinal.setForeground(Color.BLACK);
+            labelFinal.setForeground(new Color(150,15,8));
 // Adicionar a label ao painel de fundo
             painelFundo.add(labelFinal);
 
@@ -259,7 +260,7 @@ public class Jogo_Da_Velha extends JFrame {
         int contador = 0;
         for (int i = 0; i < 9; i++) {
             bt[i].setText("");
-            bt[contador].setBackground(xo ? Color.BLACK : Color.BLACK);
+            bt[contador].setBackground(xo ? new Color(150,15,8) : new Color(150,15,8));
             click[i] = false;
             contador++;
         }

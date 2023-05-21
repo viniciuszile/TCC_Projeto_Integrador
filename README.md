@@ -19,7 +19,7 @@
 
 Este é o repositório do nosso projeto de Trabalho de Conclusão de Curso (TCC) da faculdade. Desenvolvemos seis jogos em Java com interface gráfica.
 
-Jogos incluídos: Acerte o Número, Jogo da Velha, Jokenpô, Ímpar ou Par, Forca e Quiz.
+Jogos incluídos: Acerte o Número, Jogo da Velha, Jokenpô, Ímpar ou Par.
 
 Requisitos do Projeto: Java como linguagem de programação e utilização de JavaFX/Swing para a interface gráfica
 
@@ -47,7 +47,7 @@ Para utilizar este projeto, siga os passos abaixo:
 2. Abra o NetBeans e importe o projeto Java Swing.
 3. Execute o projeto no NetBeans.
 4. Inicie a aplicação através do arquivo "MenuPrincipal.java".
-5. No menu principal, selecione o jogo que deseja jogar entre as opções disponíveis: Acerte o Número, Jogo da Velha, Jokenpô, Ímpar ou Par, Forca e Quiz.
+5. No menu principal, selecione o jogo que deseja jogar entre as opções disponíveis: Acerte o Número, Jogo da Velha, Jokenpô, Ímpar ou Par.
 6. Divirta-se jogando o jogo escolhido.
 
 ## Contribuidores 👥

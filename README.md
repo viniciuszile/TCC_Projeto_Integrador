@@ -47,7 +47,7 @@ Para utilizar este projeto, siga os passos abaixo:
 2. Abra o NetBeans e importe o projeto Java Swing.
 3. Execute o projeto no NetBeans.
 4. Inicie a aplicação através do arquivo "MenuPrincipal.java".
-5. No menu principal, selecione o jogo que deseja jogar entre as opções disponíveis: Acerte o Número, Jogo da Velha, Jokenpô, Ímpar ou Par.
+5. No menu principal, selecione o jogo que deseja jogar entre as opções disponíveis: Acerte o Número, Jogo da Velha, Forca, Jokenpô, Ímpar ou Par.
 6. Divirta-se jogando o jogo escolhido.
 
 ## Contribuidores 👥
